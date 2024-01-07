@@ -1,10 +1,13 @@
 import { level } from './level.js';
+import { Pointer } from './pointer.js';
 import { Settings } from './settings.js';
 
 class Game {
     constructor(){
         this.level = new level();
         this.previoustime = Date.now();
+
+        Pointer.init()
 
         this.run();
     }
