@@ -2,13 +2,20 @@ import { Pointer } from './pointer.js';
 import { drawCircle } from './canvas.js';
 
 export class level {
-    // ctx;
+
     constructor(){
         this.setup();
     }
 
     setup = async () => {
+        // console.log('setup')
         this.canvas = document.querySelector('canvas')
+        // console.log('setup', document.querySelector('canvas'))
+        if (!this.canvas) {
+            console.error('Canvas element not found!');
+            return;
+        }
+        
         this.ctx = this.canvas.getContext('2d');
         this.setScreenSize();
     }
@@ -16,9 +23,10 @@ export class level {
     run(){
         // console.log('running');
          console.log(Pointer.pos)
-        // this.ctx.drawPointer.pos
         // random circle
-        drawCircle(this.ctx, Pointer.pos.x, Pointer.pos.y,10,0,Math.PI*2);
+        console.log('canvas',this.canvas)
+        console.log('ctx',this.ctx)
+        drawCircle(this.ctx, Pointer.pos.x, Pointer.pos.y,10,0,Math.PI*2,{fillStyle:'blue'});
     }
 
     setScreenSize() {
