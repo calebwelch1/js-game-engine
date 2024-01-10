@@ -6,8 +6,6 @@ class Game {
     constructor(){
         this.level = new level();
         this.previoustime = Date.now();
-        // this.canvas;
-        // this.ctx;
         Pointer.init()
         this.level.setup();
 

@@ -24,13 +24,11 @@ export class Pointer {
 
     static mousedown = (e)=>{
         this.pos = {x:e.pageX, y:e.pageY};
-        // this.#clicked = true;
         this.clicked = true;
     }
 
     static mouseup = (e)=>{
         this.pos = {x:e.pageX, y:e.pageY};
         this.clicked = false;
-        // this.#clicked = false;
     }
 }
