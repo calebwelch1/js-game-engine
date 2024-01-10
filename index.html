@@ -6,16 +6,60 @@
         <title>Game</title>
 
         <style>
+            .options {
+                position: fixed;
+                height: 100%;
+                width: 100%;
+                max-height:100px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                background-color: palegoldenrod;
+            }
+            .color{
+                height: 20px;
+                width: 20px;
+                /* fill: red; */
+                /* background-color:red; */
+                margin: 0 5px 0 5px;
+            }
+            .red {
+                background-color:darkred;
+            }
+            .blue {
+                background-color:midnightblue;
+            }
+            .green {
+                background-color:lightseagreen;
+            }
+            .black {
+                background-color:black;
+            }
+            .white {
+                background-color:whitesmoke;
+            }
             canvas {
                 position: fixed;
                 left: 0;
-                top: 0;
+                top: 100px;
                 width: 100%;
                 height: 100%;
             }
         </style>
     </head>
     <body>
+        <div class="options">
+            <div class="color red">
+            </div>
+            <div class="color blue">
+            </div>
+            <div class="color green">
+            </div>
+            <div class="color black">
+            </div>
+            <div class="color white">
+            </div>
+        </div>
         <canvas></canvas>
         <script src="./src/main.js" type="module"></script>
     </body>

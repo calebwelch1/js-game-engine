@@ -1,6 +1,7 @@
 export class Pointer {
     static #x;
     static #y;
+    static #isClicked = false;
 
     static init()
     {
@@ -14,6 +15,8 @@ export class Pointer {
     // #x is private var
     static set pos({x,y}) {this.#x = x; this.#y=y;}
     static get pos() { return {x:this.#x, y:this.#y}};
+    static set clicked(bool) {this.#isClicked = bool}
+    static get clicked() {return this.#isClicked}
 
     static mousemove = (e)=>{
         this.pos = {x:e.pageX, y:e.pageY};
@@ -21,9 +24,13 @@ export class Pointer {
 
     static mousedown = (e)=>{
         this.pos = {x:e.pageX, y:e.pageY};
+        // this.#clicked = true;
+        this.clicked = true;
     }
 
     static mouseup = (e)=>{
         this.pos = {x:e.pageX, y:e.pageY};
+        this.clicked = false;
+        // this.#clicked = false;
     }
 }

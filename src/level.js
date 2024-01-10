@@ -15,18 +15,23 @@ export class level {
             console.error('Canvas element not found!');
             return;
         }
-        
+
         this.ctx = this.canvas.getContext('2d');
         this.setScreenSize();
     }
 
     run(){
         // console.log('running');
-         console.log(Pointer.pos)
+        //  console.log(Pointer.pos)
         // random circle
-        console.log('canvas',this.canvas)
-        console.log('ctx',this.ctx)
+        // console.log('canvas',this.canvas)
+        // console.log('ctx',this.ctx)
+        if (Pointer.clicked) {
+            // console.log('clicked')
         drawCircle(this.ctx, Pointer.pos.x, Pointer.pos.y,10,0,Math.PI*2,{fillStyle:'blue'});
+
+        }
+        // drawCircle(this.ctx, Pointer.pos.x, Pointer.pos.y,10,0,Math.PI*2,{fillStyle:'blue'});
     }
 
     setScreenSize() {
