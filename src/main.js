@@ -17,9 +17,9 @@ class Game {
             let newtime = Date.now();
             Settings.dt = ( newtime - this.previoustime) / 1000;
             this.previoustime = newtime;
-    
-            this.level.run();
-    
+            let color = Settings.get('color')
+            this.level.run(color);
+
             requestAnimationFrame(this.run);
         // }
         // tick();

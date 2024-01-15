@@ -9,6 +9,12 @@ export class level {
     }
 
     setup = async () => {
+
+        function setSettingsColor(color) {
+            Settings.remove('color');
+            Settings.add('color', color);
+        };
+
         this.canvas = document.querySelector('canvas')
         if (!this.canvas) {
             console.error('Canvas element not found!');
@@ -16,19 +22,27 @@ export class level {
         }
         this.ctx = this.canvas.getContext('2d');
         this.setScreenSize();
-        // TODO: add colors to settings
-        // TODO: add listeners for div clicks to set settings color
-        this.setColors();
-        // console.log('blue', this.blue);
-        this.blue.addEventListener('mousedown', Settings.color = 'blue');
-        this.red.addEventListener('mousedown', Settings.color = 'red');
 
+        // set colors even listeners
+            document.querySelector('button.red').addEventListener('mousedown', () => setSettingsColor('red'))
+            document.querySelector('button.blue').addEventListener('mousedown', () => setSettingsColor('blue'))
+            document.querySelector('button.green').addEventListener('mousedown', () => setSettingsColor('green'))
+            document.querySelector('button.black').addEventListener('mousedown', () => setSettingsColor('black'))
+            document.querySelector('button.white').addEventListener('mousedown', () => setSettingsColor('white'))
+            document.querySelector('.clickme').addEventListener('mousedown', () => setSettingsColor('orange'))
+
+            //TODO:
+            // saving canvas
+            // crop
+            // other paint features
     }
 
-    run(){
+    run(color = 'blue'){
+        Settings.add('color', color)
+        console.log('settings color', this.getSettingsColor());
         if (Pointer.clicked) {
-        // Settings.color ? Settings.color : 'black'
-        drawCircle(this.ctx, Pointer.pos.x, Pointer.pos.y,10,0,Math.PI*2, true, {fillStyle:Settings.color});
+        let color = Settings.get('color');
+        drawCircle(this.ctx, Pointer.pos.x, Pointer.pos.y,10,0,Math.PI*2, true, {fillStyle:color});
         }
         // drawCircle(this.ctx, Pointer.pos.x, Pointer.pos.y,10,0,Math.PI*2,{fillStyle:'blue'});
     }
@@ -41,12 +55,7 @@ export class level {
         this.canvas.height=h;
     }
 
-    setColors() {
-        this.red = document.querySelector('div.red')
-        this.blue = document.querySelector('div.blue')
-        this.green = document.querySelector('div.green')
-        this.black = document.querySelector('div.black')
-        this.white = document.querySelector('div.white')
-        return [this.red, this.blue, this.green,this.black, this.white];
+    getSettingsColor(){
+       return Settings.get('color')
     }
 }
