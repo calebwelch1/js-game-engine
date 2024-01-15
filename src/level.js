@@ -15,6 +15,12 @@ export class level {
             Settings.add('color', color);
         };
 
+        function setSettingsSize(size) {
+            // TODO: check that size is both a num and above 0
+            Settings.remove('size');
+            Settings.add('size', size)
+        }
+
         this.canvas = document.querySelector('canvas')
         if (!this.canvas) {
             console.error('Canvas element not found!');
@@ -23,7 +29,11 @@ export class level {
         this.ctx = this.canvas.getContext('2d');
         this.setScreenSize();
 
+        // set size event listeners
+        // document.querySelector('button.decrementSize').addEventListener('mousedown', () => setSettingsSize(Settings.get('size')+10))
+        // document.querySelector('button.incrementSize').addEventListener('mousedown', () => setSettingsSize(Settings.get('size')-10))
         // set colors even listeners
+            document.querySelector('button.red').addEventListener('mousedown', () => setSettingsColor('red'))
             document.querySelector('button.red').addEventListener('mousedown', () => setSettingsColor('red'))
             document.querySelector('button.blue').addEventListener('mousedown', () => setSettingsColor('blue'))
             document.querySelector('button.green').addEventListener('mousedown', () => setSettingsColor('green'))
@@ -38,11 +48,12 @@ export class level {
     }
 
     run(color = 'blue'){
+        // SETTINGS DEFAULT VALUES
         Settings.add('color', color)
-        console.log('settings color', this.getSettingsColor());
         if (Pointer.clicked) {
         let color = Settings.get('color');
-        drawCircle(this.ctx, Pointer.pos.x, Pointer.pos.y,10,0,Math.PI*2, true, {fillStyle:color});
+        let size = Settings.get('size');
+        drawCircle(this.ctx, Pointer.pos.x, Pointer.pos.y,size,0,Math.PI*2, true, {fillStyle:color});
         }
         // drawCircle(this.ctx, Pointer.pos.x, Pointer.pos.y,10,0,Math.PI*2,{fillStyle:'blue'});
     }
