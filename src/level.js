@@ -50,6 +50,7 @@ export class level {
     run(color = 'blue'){
         // SETTINGS DEFAULT VALUES
         Settings.add('color', color)
+        Settings.add('size', 10)
         if (Pointer.clicked) {
         let color = Settings.get('color');
         let size = Settings.get('size');
