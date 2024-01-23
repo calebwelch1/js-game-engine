@@ -23,13 +23,13 @@
                 /* background-color:red; */
                 margin: 0 5px 0 5px;
             }
-            .red {
+            .darkred {
                 background-color:darkred;
             }
-            .blue {
+            .midnightblue {
                 background-color:midnightblue;
             }
-            .green {
+            .seagreen {
                 background-color:lightseagreen;
             }
             .black {
@@ -37,6 +37,36 @@
             }
             .white {
                 background-color:whitesmoke;
+            }
+            .red {
+                background-color:red;
+            }
+            .blue {
+                background-color:blue;
+            }
+            .green {
+                background-color:green;
+            }
+            .yellow {
+                background-color:yellow;
+            }
+            .orange {
+                background-color:orange;
+            }
+            .orangered {
+                background-color:orangered;
+            }
+            .powderblue {
+                background-color:powderblue;
+            }
+            .lightgreen {
+                background-color:lightgreen;
+            }
+            .orchid {
+                background-color:orchid;
+            }
+            .purple {
+                background-color:purple;
             }
             canvas {
                 position: fixed;
@@ -49,17 +79,45 @@
     </head>
     <body>
         <div class="options">
-            <button class="clickme">click me !</button>
             <div>
+                <button class="decrement">-</button>
+                <button class="increment">+</button>
+            </div>
+            <div class="color-rows" style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="display: flex; flex-direction: row;">
+                <button class="color darkred">
+                </button>
+                <button class="color midnightblue">
+                </button>
+                <button class="color seagreen">
+                </button>
+                <button class="color black">
+                </button>
+                <button class="color white">
+                </button>
+            </div>
+            <div style="display: flex; flex-direction: row;">
+                <button class="color orangered">
+                </button>
+                <button class="color powderblue">
+                </button>
+                <button class="color lightgreen">
+                </button>
+                <button class="color orchid">
+                </button>
+                <button class="color purple">
+                </button>
+            </div>
+            <div style="display: flex; flex-direction: row;">
                 <button class="color red">
                 </button>
                 <button class="color blue">
                 </button>
                 <button class="color green">
                 </button>
-                <button class="color black">
+                <button class="color yellow">
                 </button>
-                <button class="color white">
+                <button class="color orange">
                 </button>
             </div>
         </div>

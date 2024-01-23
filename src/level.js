@@ -17,6 +17,7 @@ export class level {
 
         function setSettingsSize(size) {
             // TODO: check that size is both a num and above 0
+            // if 
             Settings.remove('size');
             Settings.add('size', size)
         }
@@ -33,13 +34,24 @@ export class level {
         // document.querySelector('button.decrementSize').addEventListener('mousedown', () => setSettingsSize(Settings.get('size')+10))
         // document.querySelector('button.incrementSize').addEventListener('mousedown', () => setSettingsSize(Settings.get('size')-10))
         // set colors even listeners
-            document.querySelector('button.red').addEventListener('mousedown', () => setSettingsColor('red'))
+            document.querySelector('button.darkred').addEventListener('mousedown', () => setSettingsColor('darkred'))
+            document.querySelector('button.midnightblue').addEventListener('mousedown', () => setSettingsColor('midnightblue'))
+            document.querySelector('button.seagreen').addEventListener('mousedown', () => setSettingsColor('lightseagreen'))
+            document.querySelector('button.black').addEventListener('mousedown', () => setSettingsColor('black'))
+            document.querySelector('button.white').addEventListener('mousedown', () => setSettingsColor('whitesmoke'))
+
+            document.querySelector('button.orangered').addEventListener('mousedown', () => setSettingsColor('orangered'))
+            document.querySelector('button.powderblue').addEventListener('mousedown', () => setSettingsColor('powderblue'))
+            document.querySelector('button.lightgreen').addEventListener('mousedown', () => setSettingsColor('lightgreen'))
+            document.querySelector('button.orchid').addEventListener('mousedown', () => setSettingsColor('orchid'))
+            document.querySelector('button.purple').addEventListener('mousedown', () => setSettingsColor('purple'))
+
             document.querySelector('button.red').addEventListener('mousedown', () => setSettingsColor('red'))
             document.querySelector('button.blue').addEventListener('mousedown', () => setSettingsColor('blue'))
             document.querySelector('button.green').addEventListener('mousedown', () => setSettingsColor('green'))
-            document.querySelector('button.black').addEventListener('mousedown', () => setSettingsColor('black'))
-            document.querySelector('button.white').addEventListener('mousedown', () => setSettingsColor('white'))
-            document.querySelector('.clickme').addEventListener('mousedown', () => setSettingsColor('orange'))
+            document.querySelector('button.yellow').addEventListener('mousedown', () => setSettingsColor('yellow'))
+            document.querySelector('button.orange').addEventListener('mousedown', () => setSettingsColor('orange'))
+
 
             //TODO:
             // saving canvas
